@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:mobile_project/main.dart';
 import 'package:web_socket_channel/io.dart';
@@ -13,6 +15,7 @@ class MyUsername extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Mobile Project',
       theme: ThemeData(
         primarySwatch: Colors.red,
@@ -58,11 +61,30 @@ class _InUsernameState extends State<InUsername> {
     return MaterialApp(
         home: Scaffold(
       appBar: AppBar(
-        title: Text('Sign In'),
+        title: Text('Welcome!'),
       ),
       body: Container(
         child: Center(
-          child: Column(children: [
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: 250,
+                width: 250,
+                child: Padding(
+                  padding: EdgeInsets.all(10),                
+                  child: Image.network('https://cdn-icons-png.flaticon.com/512/501/501127.png'),
+                  ),
+              ),
+              Padding(
+                padding: EdgeInsets.all(20),
+                child: Text(
+                  'Hello!! Come on in after you enter your name!',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontStyle: FontStyle.italic,
+                  )
+                ),
+                ),
             Container(
                 padding: EdgeInsets.all(20),
                 child: TextFormField(
